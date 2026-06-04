@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://m1oq4ejj0pu7"]
+
+[ext_resource type="Script" uid="uid://bxhhd3jpuljj5" path="res://start_screen.gd" id="1_ncxyx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pevhg"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ncxyx"]
+bg_color = Color(0.023529412, 0.07058824, 0.45882353, 0.7372549)
+
+[node name="Start Screen" type="Control" unique_id=769945885]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ncxyx")
+
+[node name="Polygon2D2" type="Polygon2D" parent="." unique_id=736219183]
+position = Vector2(818, 52)
+color = Color(0.76862746, 1, 1, 1)
+polygon = PackedVector2Array(741, -51, 741, 211, -192, 209, -38, -51)
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=2078090481]
+polygon = PackedVector2Array(-579, -277, -679, 1002, 1902, 935, 1852, -297)
+
+[node name="Button" type="Button" parent="." unique_id=1723065755]
+layout_mode = 0
+offset_left = 611.0
+offset_top = -3.0
+offset_right = 1559.0
+offset_bottom = 267.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_pevhg")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ncxyx")
+
+[node name="Label" type="Label" parent="." unique_id=1771874277]
+layout_mode = 0
+offset_left = 818.0
+offset_top = 52.0
+offset_right = 1527.0
+offset_bottom = 227.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 128
+text = "PLAY GAME"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1654298078]
+position = Vector2(585, 328)
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

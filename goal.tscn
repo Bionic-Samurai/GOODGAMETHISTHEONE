@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dibj3wih4y42c"]
+
+[ext_resource type="Script" uid="uid://phr46ntn654w" path="res://goal.gd" id="1_0qle8"]
+[ext_resource type="Texture2D" uid="uid://d4mshj0utft45" path="res://kenney_pixel-platformer/Tiles/tile_0010.png" id="1_6k3qi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0qle8"]
+size = Vector2(27, 25)
+
+[node name="Goal" type="Area2D" unique_id=1888395406]
+script = ExtResource("1_0qle8")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=708391094]
+position = Vector2(14, 14)
+scale = Vector2(1.5, 1.388889)
+texture = ExtResource("1_6k3qi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2122689768]
+position = Vector2(13.5, 14.5)
+shape = SubResource("RectangleShape2D_0qle8")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

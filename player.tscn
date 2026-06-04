@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://d1e6301qt30f3"]
+
+[ext_resource type="Texture2D" uid="uid://vyu0ghv6wod" path="res://kenney_pixel-platformer/Tiles/Characters/tile_0006.png" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://b7djmdhbeckxt" path="res://player.gd" id="1_onrkg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4flbx"]
+size = Vector2(28, 31)
+
+[node name="Player" type="CharacterBody2D" unique_id=1566198054]
+position = Vector2(1, -1)
+script = ExtResource("1_onrkg")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1465015342]
+position = Vector2(64, 483)
+scale = Vector2(1.3958333, 1.3125026)
+texture = ExtResource("1_4flbx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1730794335]
+position = Vector2(64, 483.5)
+shape = SubResource("RectangleShape2D_4flbx")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=410185837]
+position = Vector2(64, 414)
+zoom = Vector2(2.3, 2.3)
